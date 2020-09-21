@@ -39,7 +39,7 @@ spring:
         predicates:
         - Path=/hotels/**
         
-       - id: eureka-server
+      - id: eureka-server
         uri: http://127.0.0.1:8761/eureka
         predicates:
         - Path=/eureka/**
