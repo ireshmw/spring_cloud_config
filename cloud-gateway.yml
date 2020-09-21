@@ -1,6 +1,6 @@
 server:
   port: 8081
-
+spring:
   security:
     oauth2:
       client:
@@ -12,7 +12,7 @@ server:
           keycloak:
             client-id: spring-cloud-gateway-client
             client-secret: 016c6e1c-9cbe-4ad3-aee1-01ddbb370f32
-spring:
+
   cloud:
     gateway:
       default-filters:
