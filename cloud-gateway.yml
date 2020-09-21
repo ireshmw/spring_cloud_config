@@ -38,6 +38,11 @@ spring:
         uri: http://127.0.0.1:8082/hotels
         predicates:
         - Path=/hotels/**
+        
+       - id: eureka-server
+        uri: http://127.0.0.1:8761/eureka
+        predicates:
+        - Path=/eureka/**
 
 logging:
   level:
