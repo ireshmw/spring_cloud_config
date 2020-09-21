@@ -1,6 +1,9 @@
 server:
   port: 8081
+
 spring:
+  application:
+    name: cloud-gateway
   security:
     oauth2:
       client:
@@ -36,7 +39,6 @@ spring:
         predicates:
         - Path=/hotels/**
 
-
 logging:
   level:
     org:
@@ -44,3 +46,4 @@ logging:
         cloud.gateway: DEBUG
         http.server.reactive: DEBUG
         web.reactive: DEBUG
+
