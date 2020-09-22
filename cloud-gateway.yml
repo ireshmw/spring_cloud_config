@@ -19,30 +19,35 @@ spring:
   cloud:
     gateway:
       default-filters:
-      - TokenRelay
+        - TokenRelay
 
       routes:
-      - id: httpbin
-        uri: https://httpbin.org
-        predicates:
-        - Path=/httpbin/**
-        filters:
-        - StripPrefix=1
+        - id: httpbin
+          uri: https://httpbin.org
+          predicates:
+            - Path=/httpbin/**
+          filters:
+            - StripPrefix=1
 
-      - id: flights-service
-        uri: http://127.0.0.1:8083/flights
-        predicates:
-        - Path=/flights/**
+        - id: flights-service
+          uri: http://127.0.0.1:8083/flights
+          predicates:
+            - Path=/flights/**
 
-      - id: hotels-service
-        uri: http://127.0.0.1:8082/hotels
-        predicates:
-        - Path=/hotels/**
-        
-      - id: eureka-server
-        uri: http://127.0.0.1:8761/eureka
-        predicates:
-        - Path=/eureka/**
+        - id: hotels-service
+          uri: http://127.0.0.1:8082/hotels
+          predicates:
+            - Path=/hotels/**
+
+        - id: eureka-server
+          uri: http://127.0.0.1:8761/eureka
+          predicates:
+            - Path=/eureka/**
+
+        - id: cloud-config-server
+          uri: http://127.0.0.1:8888/
+          predicates:
+            - Path=/**
 
 logging:
   level:
@@ -51,4 +56,3 @@ logging:
         cloud.gateway: DEBUG
         http.server.reactive: DEBUG
         web.reactive: DEBUG
-
