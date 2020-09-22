@@ -44,10 +44,11 @@ spring:
           predicates:
             - Path=/eureka/**
 
-        - id: cloud-config-server
-          uri: http://127.0.0.1:8888/
-          predicates:
-            - Path=/**
+
+        # - id: cloud-config-server
+        #   uri: http://127.0.0.1:8888/
+        #   predicates:
+        #     - Path=/**
 
 logging:
   level:
