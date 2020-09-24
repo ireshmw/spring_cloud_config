@@ -76,25 +76,24 @@ spring:
         - TokenRelay
 
       routes:
-        - id: httpbin
-          uri: https://httpbin.org
-          predicates:
-            - Path=/httpbin/**
-          filters:
-            - StripPrefix=1
+        # - id: httpbin
+        #   uri: https://httpbin.org
+        #   predicates:
+        #     - Path=/httpbin/**
+        #   filters:
+        #     - StripPrefix=1
 
-        - id: flights-service
-          uri: http://127.0.0.1:8083/flights
-          predicates:
-            - Path=/flights/**
+        # - id: flights-service
+        #   uri: http://127.0.0.1:8083/flights
+        #   predicates:
+        #     - Path=/flights/**
 
-        - id: hotels-service
-          uri: http://127.0.0.1:8082/hotels
-          predicates:
-            - Path=/hotels/**
-
+        # - id: hotels-service
+        #   uri: http://127.0.0.1:8082/hotels
+        #   predicates:
+        #     - Path=/hotels/**
         - id: eureka-server
-          uri: eureka-server/eureka
+          uri: lb://EUREKA-SERVER/eureka
           predicates:
             - Path=/eureka/**
 
