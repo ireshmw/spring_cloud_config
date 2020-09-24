@@ -1,18 +1,18 @@
-server:
-  port: 8761
-  servlet:
-    context-path: /eureka/
+# server:
+#   port: 8761
+#   servlet:
+#     context-path: /eureka/
 
-eureka:
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+# eureka:
+#   client:
+#     registerWithEureka: false
+#     fetchRegistry: false
+#     service-url:
+#       defaultZone: http://localhost:8761/eureka
 
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm
+# spring:
+#   security:
+#     oauth2:
+#       resourceserver:
+#         jwt:
+#           issuer-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm
