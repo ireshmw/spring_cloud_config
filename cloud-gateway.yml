@@ -57,7 +57,7 @@ server:
 
 spring:
   application:
-    name: CLOUD-GATEWAY
+    name: cloud-gateway
   security:
     oauth2:
       client:
@@ -104,3 +104,6 @@ logging:
         cloud.gateway: DEBUG
         http.server.reactive: DEBUG
         web.reactive: DEBUG
+
+app:
+  user: ${cloud-config-server-secret/my-name}
