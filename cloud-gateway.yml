@@ -106,4 +106,4 @@ logging:
         web.reactive: DEBUG
 
 app:
-  user: ${cloud-config-server-secret/my-name:ireFail}
+  user: ${cloud-config-server-secret/my-name:fail to fetch from vault}
