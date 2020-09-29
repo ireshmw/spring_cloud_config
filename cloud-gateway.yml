@@ -72,8 +72,8 @@ spring:
 
   cloud:
     gateway:
-      default-filters:
-        - TokenRelay
+      # default-filters:
+      #   - TokenRelay
 
       routes:
         # - id: httpbin
