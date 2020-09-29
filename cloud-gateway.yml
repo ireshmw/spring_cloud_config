@@ -58,22 +58,22 @@ server:
 spring:
   application:
     name: cloud-gateway
-  # security:
-  #   oauth2:
-  #     client:
-  #       provider:
-  #         keycloak:
-  #           issuer-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm
-  #           user-name-attribute: preferred_username
-  #       registration:
-  #         keycloak:
-  #           client-id: spring-cloud-gateway-client
-  #           client-secret: 016c6e1c-9cbe-4ad3-aee1-01ddbb370f32
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: spring-cloud-gateway-client
+            client-secret: 016c6e1c-9cbe-4ad3-aee1-01ddbb370f32
 
   cloud:
     gateway:
-      # default-filters:
-      #   - TokenRelay
+      default-filters:
+        - TokenRelay
 
       routes:
         # - id: httpbin
@@ -106,4 +106,4 @@ logging:
         web.reactive: DEBUG
 
 app:
-  user: ${cloud-config-server-secret/my-name:fail to fetch from vault ============}
+  user: ${cloud-config-server-secret/my-name:fail to fetch vault}
