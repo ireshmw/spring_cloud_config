@@ -100,7 +100,7 @@ spring:
         - id: eureka-server
           uri: http://localhost:8761/
           predicates:
-            - Path=/info**
+            - Path=/hello**
 
 logging:
   level:
