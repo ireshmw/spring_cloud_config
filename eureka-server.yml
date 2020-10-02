@@ -16,3 +16,15 @@
 #       resourceserver:
 #         jwt:
 #           issuer-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm
+
+server:
+  port: 8761
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${CONFIG_DISCOVERY_HOST:localhost}:${CONFIG_DISCOVERY_PORT:8761}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enable-self-preservation: false
