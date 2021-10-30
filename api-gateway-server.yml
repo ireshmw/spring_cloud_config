@@ -29,9 +29,9 @@ spring:
 
 
   cloud:
-#    loadbalancer:
-#      ribbon:
-#        enabled: false
+    #    loadbalancer:
+    #      ribbon:
+    #        enabled: false
     gateway:
       default-filters:
         - TokenRelay
@@ -58,25 +58,20 @@ logging:
         cloud.gateway: DEBUG
         http.server.reactive: DEBUG
         web.reactive: DEBUG
-spring:
-  cloud:
-    kubernetes:
-      enabled: false
-
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-# ---
-# spring:
-#   config:
-#     activate:
-#       on-cloud-platform: kubernetes
-#   cloud:
-#     kubernetes:
-#       enabled: true
+---
+ spring:
+   config:
+     activate:
+       on-cloud-platform: kubernetes
+   cloud:
+     kubernetes:
+       enabled: true
 
-# eureka:
-#   client:
-#     enabled: false
+ eureka:
+   client:
+     enabled: false
