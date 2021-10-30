@@ -44,7 +44,7 @@ spring:
         #          predicates:
         #            - Path=/health**
         - id: user-management-service
-          uri: lb://user-management-service/  # switch 'lb://' to 'http://'    lb://user-management-service/
+          uri: lb://user-management-service/  # switch 'lb://' to 'http://'    lb://user-management-service/  on kubernetes error occur try user http:// if local error occur try lb://
           predicates:
             - Path=/user/**
           filters:
