@@ -35,12 +35,12 @@ spring:
           jwk-set-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm/protocol/openid-connect/certs
           issuer-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm
 
-#  jpa:
-#   database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-#   hibernate:
-#    ddl-auto: update
-#  datasource:
-#    driverClassName: com.mysql.jdbc.Driver
-#    url: jdbc:mysql://34.72.199.151:3306/user_data_db
-#    username: root
-#    password: ireshmw
+  jpa:
+   database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+   hibernate:
+    ddl-auto: update
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/local_u_db
+    username: root
+    password: 1234
