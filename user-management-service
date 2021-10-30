@@ -1,0 +1,54 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: user-management-service
+  data:
+    rest:
+      base-path: user
+#  zipkin:
+#    enabled: true
+#  sleuth:
+#    sampler:
+#      probability: 1
+
+#  sleuth:
+#    enabled: true
+#    sampler:
+#      percentage: 1
+#    zipkin:
+#      enabled: true
+#      baseUrl: http://localhost:9411
+
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true
+    kubernetes:
+      discovery:
+        all-namespaces: true
+
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          jwk-set-uri: http://34.72.167.122:8099/auth/realms/spring-cloud-gateway-realm/protocol/openid-connect/certs
+#          issuer-uri: http://34.72.167.122:8099/auth/realms/spring-cloud-gateway-realm
+
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm
+
+#  jpa:
+#   database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#   hibernate:
+#    ddl-auto: update
+#  datasource:
+#    driverClassName: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://34.72.199.151:3306/user_data_db
+#    username: root
+#    password: ireshmw
