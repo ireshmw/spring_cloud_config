@@ -28,14 +28,6 @@ spring:
       discovery:
         all-namespaces: true
 
-#  security:
-#    oauth2:
-#      resourceserver:
-#        jwt:
-#          jwk-set-uri: http://34.72.167.122:8099/auth/realms/spring-cloud-gateway-realm/protocol/openid-connect/certs
-#          issuer-uri: http://34.72.167.122:8099/auth/realms/spring-cloud-gateway-realm
-
-
   security:
     oauth2:
       resourceserver:
