@@ -58,20 +58,20 @@ logging:
         cloud.gateway: DEBUG
         http.server.reactive: DEBUG
         web.reactive: DEBUG
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone: http://localhost:8761/eureka/
 
----
- spring:
-   config:
-     activate:
-       on-cloud-platform: kubernetes
-   cloud:
-     kubernetes:
-       enabled: true
+# ---
+#  spring:
+#    config:
+#      activate:
+#        on-cloud-platform: kubernetes
+#    cloud:
+#      kubernetes:
+#        enabled: true
 
- eureka:
-   client:
-     enabled: false
+#  eureka:
+#    client:
+#      enabled: false
