@@ -26,13 +26,6 @@ spring:
   #      enabled: true
   #      baseUrl: http://localhost:9411
 
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: true
-    kubernetes:
-      discovery:
-        all-namespaces: true
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
