@@ -8,6 +8,10 @@ spring:
       base-path: user
   security:
     oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: https://idp.example.com/auth/realms/demo
       resourceserver:
         jwt:
           jwk-set-uri: http://localhost:8080/auth/realms/spring-cloud-gateway-realm/protocol/openid-connect/certs
