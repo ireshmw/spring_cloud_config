@@ -43,11 +43,15 @@ spring:
         #          uri: http://localhost:8761/health
         #          predicates:
         #            - Path=/health**
+
+
         - id: user-management-service
           uri: lb://user-management-service/  # switch 'lb://' to 'http://'    lb://user-management-service/  on kubernetes error occur try user http:// if local error occur try lb://
           predicates:
-            - Path=/user/**
+            - Path=/user/**, /user-management-service/**  # path match "user" or "user-management-service will" send to user-management-service
+#            - Path=/user-management/**
           filters:
+            - RewritePath=/(?:user|user-management-service)/(?<path>.*), /$\{path} # remove path "user" or "user-management-service" and use only rest of the path
             - RemoveRequestHeader=Cookie
 
         - id: openapi
@@ -60,12 +64,14 @@ spring:
 
 logging:
   level:
+    web: TRACE
     org:
       springframework:
-        cloud: DEBUG
-        cloud.gateway: DEBUG
-        http.server.reactive: DEBUG
-        web.reactive: DEBUG
+        web: TRACE
+        cloud: TRACE
+        cloud.gateway: TRACE
+        http.server.reactive: TRACE
+        web.reactive: TRACE
 # eureka:
 #   client:
 #     serviceUrl:
