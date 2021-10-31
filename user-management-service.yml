@@ -1,9 +1,9 @@
 server:
   port: 8084
 spring:
-  data:
-    rest:
-      base-path: user
+#   data:
+#     rest:
+#       base-path: user
   security:
     oauth2:
       client:
