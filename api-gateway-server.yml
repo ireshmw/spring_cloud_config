@@ -53,10 +53,10 @@ spring:
           filters:
             - RewritePath=/(?:user|user-management-service)/(?<path>.*), /$\{path} # remove path "user" or "user-management-service" and use only rest of the path
             - RemoveRequestHeader=Cookie
-            - name: CircuitBreaker
-               args:
-                name: gatewayCircuitBreaker
-                fallbackUri: forward:/fallback
+#             - name: CircuitBreaker
+#                args:
+#                 name: gatewayCircuitBreaker
+#                 fallbackUri: forward:/fallback
 
         - id: openapi
           uri: http://localhost:${server.port}
