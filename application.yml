@@ -18,12 +18,14 @@
 #       exposure:
 #         include: '*'
 
-# spring:
-#   cloud:
-#     kubernetes:
-#       loadbalancer:
-#         enabled: false
-#       enabled: false
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: false
+      loadbalancer:
+        enabled: false
+      enabled: false
 
 eureka:
   client:
