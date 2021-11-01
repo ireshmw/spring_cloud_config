@@ -7,23 +7,23 @@
 #   instance:
 #     hostname: localhost
 
-management:
-  endpoint:
-    restart:
-      enabled: true
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+# management:
+#   endpoint:
+#     restart:
+#       enabled: true
+#     health:
+#       show-details: always
+#   endpoints:
+#     web:
+#       exposure:
+#         include: '*'
 
-spring:
-  cloud:
-    kubernetes:
-      loadbalancer:
-        enabled: false
-      enabled: false
+# spring:
+#   cloud:
+#     kubernetes:
+#       loadbalancer:
+#         enabled: false
+#       enabled: false
 
 eureka:
   client:
