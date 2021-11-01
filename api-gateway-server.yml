@@ -1,6 +1,8 @@
 server:
   port: 8081
 spring:
+  application:
+    name: api-gateway-server
   security:
     oauth2:
       resourceserver:
@@ -33,7 +35,14 @@ spring:
     #      ribbon:
     #        enabled: false
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
       default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
         - TokenRelay
       discovery:
         locator:
@@ -51,12 +60,14 @@ spring:
             - Path=/user/**, /user-management-service/**  # path match "user" or "user-management-service will" send to user-management-service
           #            - Path=/user-management/**
           filters:
+#            - CircuitBreaker=myCircuitBreaker
+#            - name: CircuitBreaker
+#              args:
+#                name: gatewayCircuitBreaker
+#                fallbackUri: forward:/fallback
             - RewritePath=/(?:user|user-management-service)/(?<path>.*), /$\{path} # remove path "user" or "user-management-service" and use only rest of the path
             - RemoveRequestHeader=Cookie
-#             - name: CircuitBreaker
-#                args:
-#                 name: gatewayCircuitBreaker
-#                 fallbackUri: forward:/fallback
+
 
         - id: openapi
           uri: http://localhost:${server.port}
